@@ -1,9 +1,13 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+    import ProductCard from '../components/ProductCard.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+    <main>
+        <ProductCard />
+    </main>
 </template>
+
+<style>
+  
+</style>
