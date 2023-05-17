@@ -5,12 +5,20 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
       <nav class="navBar">
-        <div class="navItem"><RouterLink to="/">Home</RouterLink></div>
-        <div class="navItem"><RouterLink to="/CargaProducto">Cargar Producto</RouterLink></div>
-        <div class="navItem"><RouterLink to="/LogIn">LogIn</RouterLink></div>
+        <div class="itemsIzq"> 
+          <div class="navItem"><RouterLink to="/">Home</RouterLink></div>
+          <div class="navItem"><RouterLink to="/CargaProducto">Vender</RouterLink></div>
+        </div>
+
+        <div class="itemsDer">
+          <div class="navItem"><RouterLink to="/LogIn">Registrarme</RouterLink></div>
+          <div class="navItem"><RouterLink to="/LogIn">Iniciar Sesión</RouterLink></div>
+        </div>
       </nav>
+      
+      <hr>
   </header>
-  <div>
+  <div class="AppContent">
     <RouterView />
   </div>
 
@@ -22,10 +30,28 @@ import { RouterLink, RouterView } from 'vue-router'
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 2px solid white;
+    margin-bottom: 10px;
+    font-size: 20px;
   }
 
   .navItem{
-    border: 2px solid red;
+    margin: 5px;
+  }
+  .itemsIzq{
+    display: flex;
+    flex-direction: row;
+  }
+  .itemsDer{
+    display: flex;
+    flex-direction: row;
+  }
+
+  hr{
+    margin-bottom: 10px;
+    border-color: hsla(160, 100%, 37%, 1);
+  }
+
+  .AppContent{
+    border: 2px solid white;
   }
 </style>

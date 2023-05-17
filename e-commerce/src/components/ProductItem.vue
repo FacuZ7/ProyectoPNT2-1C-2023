@@ -20,5 +20,6 @@
 <style>
     .item{
         border-radius: 10px; background-color: gray; padding: 20px;
+        max-width: 240px;
     }
 </style>
