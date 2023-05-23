@@ -11,7 +11,7 @@ import { RouterLink, RouterView } from 'vue-router'
         </div>
 
         <div class="itemsDer">
-          <div class="navItem"><RouterLink to="/LogIn">Registrarme</RouterLink></div>
+          <div class="navItem"><RouterLink to="/Register">Registrarme</RouterLink></div>
           <div class="navItem"><RouterLink to="/LogIn">Iniciar Sesión</RouterLink></div>
         </div>
       </nav>

@@ -1,9 +1,10 @@
 <script setup>
-import { RouterLink } from 'vue-router'
-import RegisterButton from '../components/buttons/RegisterButton.vue'
+    import { RouterLink } from 'vue-router'
+    import RegisterButton from '../components/buttons/RegisterButton.vue'
 </script>
 
 <template>
+    <h1>Register User</h1>
     <div class="content">
         <div class="contentItem">
             <label>Usuario:</label>
@@ -16,9 +17,7 @@ import RegisterButton from '../components/buttons/RegisterButton.vue'
         <div class="contentItem">
             <RegisterButton/>
         </div>
-        <div class="contentItem">
-            <p>Si no tenes usuario <RouterLink to="/Register">hace click acá</RouterLink></p>
-        </div>
+        
         <div class="contentItem">
             <p>{{ RegisterButton.name }}</p>
         </div>
