@@ -1,25 +1,28 @@
-<script setup>
-    import { RouterLink } from 'vue-router'
+<script>
+    import { defineComponent } from 'vue';
     import RegisterButton from '../components/buttons/RegisterButton.vue'
+    export default defineComponent({
+        components: {RegisterButton},
+        data(){
+            return {
+                User: {usuario:'',contraseña:''}
+            }
+        } 
+    })
 </script>
 
 <template>
-    <h1>Register User</h1>
     <div class="content">
         <div class="contentItem">
             <label>Usuario:</label>
-            <input type="text">
+            <input type="text" v-model="User.usuario">
         </div>
         <div class="contentItem">
             <label>Contraseña:</label>
-            <input type="password">
+            <input type="password" v-model="User.contraseña">
         </div>
         <div class="contentItem">
-            <RegisterButton/>
-        </div>
-        
-        <div class="contentItem">
-            <p>{{ RegisterButton.name }}</p>
+            <RegisterButton :User="User"/>
         </div>
     </div>
 </template>

@@ -8,9 +8,11 @@
         name: "registerButton",
         methods: {
             registrarme(){
-                alert("todo ok");
+                alert("todo ok " + this.User.usuario + " " + this.User.contraseña);
+
             }
-        }
+        },
+        props:['User']    
     })
 </script>
 
@@ -20,6 +22,7 @@
         margin: 5px;
         background-color: transparent;
         color: gray;
+        font-size: 20px;
     }
 
     .register-btn:hover{

@@ -19,9 +19,6 @@ import RegisterButton from '../components/buttons/RegisterButton.vue'
         <div class="contentItem">
             <p>Si no tenes usuario <RouterLink to="/Register">hace click acá</RouterLink></p>
         </div>
-        <div class="contentItem">
-            <p>{{ RegisterButton.name }}</p>
-        </div>
     </div>
 </template>
 
