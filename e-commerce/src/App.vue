@@ -53,5 +53,6 @@ import { RouterLink, RouterView } from 'vue-router'
 
   .AppContent{
     border: 2px solid white;
+    padding: 10px;
   }
 </style>
