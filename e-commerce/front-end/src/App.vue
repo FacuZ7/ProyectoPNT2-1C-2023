@@ -8,6 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <div class="itemsIzq"> 
           <div class="navItem"><RouterLink to="/">Home</RouterLink></div>
           <div class="navItem"><RouterLink to="/CargaProducto">Vender</RouterLink></div>
+          <div class="navItem"><RouterLink to="/Product">Product</RouterLink></div>
         </div>
 
         <div class="itemsDer">
