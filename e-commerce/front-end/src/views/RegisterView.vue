@@ -42,8 +42,5 @@
     input{
         font-size: 18px;   
     }
-
-    p{
-        font-size: 18px;
-    }
+    
 </style>

@@ -1,4 +1,4 @@
-<script setup>
+<script>
 import { RouterLink } from 'vue-router'
 import RegisterButton from '../components/buttons/RegisterButton.vue'
 </script>
