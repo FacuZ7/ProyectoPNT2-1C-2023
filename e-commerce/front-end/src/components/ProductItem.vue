@@ -21,5 +21,11 @@
     .item{
         border-radius: 10px; background-color: gray; padding: 20px;
         max-width: 240px;
+        margin-right: 50px;
+        transition: transform 0.3s;
+    }
+
+    .item:hover{
+        transform: scale(1.11);
     }
 </style>

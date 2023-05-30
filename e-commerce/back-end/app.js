@@ -4,9 +4,9 @@ import connection from './connection/connection.js'
 import User from './Models/User.js'
 const app = express();
 
-// const rickAndMortyAPI = fetch("https://rickandmortyapi.com/api/episode?page=3")
-//                             .then((response)=>response.json())
-//                             .then((data)=>console.log(data))
+//  const rickAndMortyAPI = fetch("https://rickandmortyapi.com/api/episode?page=3")
+//                              .then((response)=>response.json())
+//                              .then((data)=>console.log(data))
 
 //---------------- middleware --------------------//
 app.use(express.urlencoded({ extended : false}))
