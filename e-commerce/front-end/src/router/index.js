@@ -3,15 +3,6 @@ import HomeView from '../views/HomeView.vue'
 import LogInView from '../views/LogInView.vue'
 import ProductUploadView from '../views/ProductUploadView.vue'
 import RegisterView from "../views/RegisterView.vue"
-import axios from 'axios'
-
-axios.get('/pruebaAxios')
-  .then(function(res){
-    console.log("hola")
-  })
-  .catch(function(){
-    console.log("todo mal")
-  })
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

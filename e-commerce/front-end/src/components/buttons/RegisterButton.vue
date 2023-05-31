@@ -4,12 +4,19 @@
 
 <script>
     import { defineComponent } from 'vue';
+    import axios from 'axios'
     export default defineComponent({
         name: "registerButton",
         methods: {
             registrarme(){
-                alert("todo ok " + this.User.usuario + " " + this.User.contraseña);
-
+                //alert(JSON.stringify(this.User));
+                axios.post("http://localhost:8081/user/create",()=>{
+                    JSON.stringify(this.User)
+                }).then((res)=>{
+                    console.log(res)
+                }).catch((err)=>{
+                    console.log(err)
+                })
             }
         },
         props:['User']    

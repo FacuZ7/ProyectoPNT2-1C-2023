@@ -1,7 +1,7 @@
 <template>
-    <div class="item">
+    <div class="item" @click="click">
         <div class="productImage">
-            <slot name="image"></slot> <!-- imagen del producto (implementar al final) -->
+            <slot name="image"></slot>
         </div>
             
         <div class="details">
@@ -15,7 +15,19 @@
             </h2> 
         </div>
     </div>
-  </template>
+</template>
+
+<script>
+    import { defineComponent } from 'vue';
+    export default defineComponent({
+        name: "productItem",
+        methods: {
+            click(){
+                alert("click")
+            }
+        }  
+    })
+</script>
 
 <style>
     .item{

@@ -5,7 +5,7 @@
         components: {RegisterButton},
         data(){
             return {
-                User: {usuario:'',contraseña:''}
+                User: {login: '',name: '', lastName: '',email:'', contraseña:''}
             }
         } 
     })
@@ -14,13 +14,30 @@
 <template>
     <div class="content">
         <div class="contentItem">
-            <label>Usuario:</label>
-            <input type="text" v-model="User.usuario">
+            <label>Login:</label>
+            <input type="text" v-model="User.login">
         </div>
+
+        <div class="contentItem">
+            <label>Nombre:</label>
+            <input type="text" v-model="User.name">
+        </div>
+
+        <div class="contentItem">
+            <label>Apellido:</label>
+            <input type="email" v-model="User.lastName">
+        </div>
+
+        <div class="contentItem">
+            <label>Email:</label>
+            <input type="text" v-model="User.email">
+        </div>
+
         <div class="contentItem">
             <label>Contraseña:</label>
             <input type="password" v-model="User.contraseña">
         </div>
+        
         <div class="contentItem">
             <RegisterButton :User="User"/>
         </div>
