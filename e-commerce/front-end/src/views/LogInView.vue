@@ -1,6 +1,6 @@
-<script>
+<script setup>
 import { RouterLink } from 'vue-router'
-import RegisterButton from '../components/buttons/RegisterButton.vue'
+import LogInButton from '../components/buttons/LogInButton.vue'
 </script>
 
 <template>
@@ -14,7 +14,7 @@ import RegisterButton from '../components/buttons/RegisterButton.vue'
             <input type="password">
         </div>
         <div class="contentItem">
-            <RegisterButton/>
+            <LogInButton/>
         </div>
         <div class="contentItem">
             <p>Si no tenes usuario <RouterLink to="/Register">hace click acá</RouterLink></p>

@@ -3,6 +3,7 @@ import routerMaster from './routes/index.js'
 import connection from './connection/connection.js'
 import User from './Models/User.js'
 import cors from 'cors'
+import bodyParser from 'body-parser'
 const app = express();
 
 //  const rickAndMortyAPI = fetch("https://rickandmortyapi.com/api/episode?page=3")
@@ -10,6 +11,7 @@ const app = express();
 //                              .then((data)=>console.log(data))
 
 //---------------- middleware --------------------//
+app.use(bodyParser.json());
 app.use(express.urlencoded({ extended : false}))
 app.use(cors({
     origin:'http://localhost:5173'

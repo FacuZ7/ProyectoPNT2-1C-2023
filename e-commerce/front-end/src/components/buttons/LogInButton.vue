@@ -1,17 +1,17 @@
 <template>
-    <button class="register-btn" @click="registrarme">Registrarme</button>
+    <button class="logIn-btn" @click="logear">Iniciar Sesión</button>
 </template>
 
 <script>
     import { defineComponent } from 'vue';
     import axios from 'axios'
     export default defineComponent({
-        name: "registerButton",
+        name: "LogIn",
         methods: {
-            async registrarme(){
-                //alert(JSON.stringify(this.User));
-                const rta = await axios.post("http://localhost:8081/user/create",this.User)
-                console.log(rta.data)
+            async logear(){
+                alert("implementar");
+                // const rta = await axios.post("http://localhost:8081/user/create",this.User)
+                // console.log(rta.data)
             }
         },
         props:['User']    
@@ -19,7 +19,7 @@
 </script>
 
 <style>
-    .register-btn{
+    .logIn-btn{
         padding: 5px;
         margin: 5px;
         background-color: transparent;
@@ -27,7 +27,7 @@
         font-size: 20px;
     }
 
-    .register-btn:hover{
+    .logIn-btn:hover{
         background-color: hsla(160, 100%, 37%, 1);
         color: white;
     }

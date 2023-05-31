@@ -1,50 +1,33 @@
-<script setup>
-    import ProductItem from './ProductItem.vue'
-    import ZapatillaAdidas from './images/ZapatillaAdidas.vue'
-    import GuitarraCombo from './images/GuitarraCombo.vue'
-    import BicicletaVenzo from './images/BicicletaVenzo.vue'
-    import BateriaAuto from './images/BateriaAuto.vue'
- 
+<script>
+    import { defineComponent } from 'vue';
+    export default defineComponent({
+        name: "productItem",
+        methods: {
+            redirect(){
+                this.$router.push("/Product/1")
+
+            }
+        }  
+    })
 </script>
 
 <template>
-    <div class="Iteeems">
-        <ProductItem>
-            <template #image> <ZapatillaAdidas /></template>
-            <template #icon>Foto</template>
-            <template #heading>Zapatillas Adidas</template>
-            Zapatillas normales!!!
-            <template #price>$30.000</template>
-        </ProductItem>
-
-        <ProductItem>
-            <template #image> <GuitarraCombo /></template>
-            <template #icon>Foto</template>
-            <template #heading>Guitarra Leonard LE362</template>
-            Combo de guitarra + parlante + accesorios
-            <template #price>$120.000</template>
-        </ProductItem>
-
-        <ProductItem>
-            <template #image> <BicicletaVenzo /></template>
-            <template #icon>Foto</template>
-            <template #heading>Bicicleta Venzo R29</template>
-            Bicicleta Venzo R29 de 21Vel
-            <template #price>$170.000</template>
-        </ProductItem>
-
-        <ProductItem>
-            <template #image> <BateriaAuto /></template>
-            <template #icon>Foto</template>
-            <template #heading>Bateria Good Year</template>
-            Bateria Good Year Ultra de 12V
-            <template #price>$35.000</template>
-        </ProductItem>
+    <div class="card" @click="redirect">
+        <slot name="image"></slot>
+        <slot name="title"></slot>
+        <slot name="description"></slot>
+        <slot name="price"></slot>
     </div>
 </template>
 
 <style>
-    .Iteeems{
-        display: flex;
+    .card{
+        border-radius: 10px; background-color: gray; padding: 20px;
+        max-width: 240px;
+        transition: transform 0.3s;
+    }
+
+    .card:hover{
+        transform: scale(1.11);
     }
 </style>

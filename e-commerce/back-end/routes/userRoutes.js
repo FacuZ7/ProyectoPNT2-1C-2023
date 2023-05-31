@@ -11,11 +11,13 @@ userRoutes.get("/:id",(req,res)=>{
 })
 
 userRoutes.post("/create",(req,res)=>{
-    const { login, name, lastName, email, password } = req.body
+    console.log("llegue")
+    console.log(req.body)
+    const { login, name, lastName, email, contraseña } = req.body
 
     
     
-    res.send(`Login: ${login}, Nombre: ${name}, Ap: ${lastName}, ${email}, pass: ${password}`)
+    res.send(`desde el back end: Login: ${login}, Nombre: ${name}, Ap: ${lastName}, ${email}, pass: ${contraseña}`)
 })
 
 userRoutes.post("/:id",(req,res)=>{
