@@ -2,6 +2,7 @@ import express from 'express'
 import routerMaster from './routes/index.js'
 import connection from './connection/connection.js'
 import User from './Models/User.js'
+import cors from 'cors'
 const app = express();
 
 //  const rickAndMortyAPI = fetch("https://rickandmortyapi.com/api/episode?page=3")
@@ -10,7 +11,11 @@ const app = express();
 
 //---------------- middleware --------------------//
 app.use(express.urlencoded({ extended : false}))
+app.use(cors({
+    origin:'http://localhost:5173'
+}))
 app.use(routerMaster)
+
 
 //-------------- sincronización con la BD -------------//
 // tengo que importar en este archivo las tablas que voy a tocar 

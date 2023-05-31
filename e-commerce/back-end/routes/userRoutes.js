@@ -11,25 +11,11 @@ userRoutes.get("/:id",(req,res)=>{
 })
 
 userRoutes.post("/create",(req,res)=>{
-    const { name, lastName, password, email} = req.body
-    // esto era si uso mysql2 derecho en mi connection pero aca ya tengo sequelize! 
-    // connection.query(
-    //     `INSERT INTO USERS (name,lastName,password,email) VALUES(${name},${lastName},${password},${email})`
-    // ).then(()=>{
-    //     result = "Usuario creado exitosamente!"
-    // }).catch(()=>{
-    //     result = "error en base de datos"
-    // })
+    const { login, name, lastName, email, password } = req.body
 
-    const newUser = User.create({
-        name: "Facundo",
-        lastName:"Zapata",
-        password:"1234",
-        email:"fzapata@gmail.com" 
-    }, {fields: [name,lastName,password,email]
-    })
     
-    res.send("Todo ok")
+    
+    res.send(`Login: ${login}, Nombre: ${name}, Ap: ${lastName}, ${email}, pass: ${password}`)
 })
 
 userRoutes.post("/:id",(req,res)=>{
