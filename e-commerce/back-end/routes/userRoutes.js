@@ -1,29 +1,16 @@
 import { Router } from 'express'
-import User from './../Models/User.js'
+import UserController from './../Controllers/userController.js'
 const userRoutes = Router();
 
-userRoutes.get("/",(req,res)=>{
-    res.send("holaaaaa!!")
-})
+const userController = new UserController
 
-userRoutes.get("/:id",(req,res)=>{
-    res.send("get con ID!!")
-})
+userRoutes.get("/",userController.getAllUsers)
 
-userRoutes.post("/create",(req,res)=>{
-    console.log("llegue")
-    console.log(req.body)
-    const { login, name, lastName, email, contraseña } = req.body
+//userRoutes.get("/create",) este deberia llevarme solamente al formulario
+userRoutes.post("create",userController.createUser)
 
-    
-    
-    res.send(`desde el back end: Login: ${login}, Nombre: ${name}, Ap: ${lastName}, ${email}, pass: ${contraseña}`)
-})
-
-userRoutes.post("/:id",(req,res)=>{
-
-    res.send("post con ID!!")
-})
+userRoutes.get("/:id",userController.getUserById)
+//userRoutes.post("/:id",userController.updateUser) IMPLEMENTAAAAAAR
 
 userRoutes.put("/:id",(req,res)=>{
     res.send("put con ID!!")

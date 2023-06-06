@@ -11,28 +11,28 @@
 <template>
     <main>
         <div class="mainPage">
-            <ProductCard>
+            <ProductCard id="1">  
                 <template #image> <ZapatillaAdidas /></template>
                 <template #title>Zapatillas Adidas</template>
                 <template #description>Zapatillas normales!!!</template>
                 <template #price>$30.000</template>
             </ProductCard>
 
-            <ProductCard>
+            <ProductCard id="2">
                 <template #image> <GuitarraCombo /></template>
                 <template #title>Guitarra Leonard LE362</template>
                 <template #description>Combo de guitarra + parlante + accesorios</template>
                 <template #price>$120.000</template>
             </ProductCard>
 
-            <ProductCard>
+            <ProductCard id="3">  
                 <template #image> <BicicletaVenzo /></template>
                 <template #title>Bicicleta Venzo R29</template>
                 <template #description>Bicicleta Venzo R29 de 21Vel</template>
                 <template #price>$170.000</template>
             </ProductCard>
 
-            <ProductCard>
+            <ProductCard id="4">
                 <template #image> <BateriaAuto /></template>
                 <template #title>Bateria Good Year</template>
                 <template #description>Bateria Good Year Ultra de 12V</template>

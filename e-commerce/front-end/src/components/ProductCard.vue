@@ -4,10 +4,11 @@
         name: "productItem",
         methods: {
             redirect(){
-                this.$router.push("/Product/1")
-
+                this.$router.push(`/Product/${this.id}`)
             }
-        }  
+        },
+        props:['id']
+
     })
 </script>
 

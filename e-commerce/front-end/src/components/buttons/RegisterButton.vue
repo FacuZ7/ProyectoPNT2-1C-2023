@@ -1,5 +1,5 @@
 <template>
-    <button class="register-btn" @click="registrarme">Registrarme</button>
+    <button class="register-btn" @click="registrarme()">Registrarme</button>
 </template>
 
 <script>
