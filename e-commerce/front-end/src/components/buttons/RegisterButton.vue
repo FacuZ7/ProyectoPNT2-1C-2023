@@ -5,6 +5,7 @@
 <script>
     import { defineComponent } from 'vue';
     import axios from 'axios'
+    
     export default defineComponent({
         name: "registerButton",
         methods: {
@@ -12,6 +13,8 @@
                 //alert(JSON.stringify(this.User));
                 const rta = await axios.post("http://localhost:8081/user/create",this.User)
                 console.log(rta.data)
+                alert("Usuario Creado!")
+                this.$router.push("/")
             }
         },
         props:['User']    
