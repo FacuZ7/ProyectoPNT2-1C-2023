@@ -7,7 +7,7 @@ const userController = new UserController
 userRoutes.get("/",userController.getAllUsers)
 
 //userRoutes.get("/create",) este deberia llevarme solamente al formulario
-userRoutes.post("create",userController.createUser)
+userRoutes.post("/create",userController.createUser)
 
 userRoutes.get("/:id",userController.getUserById)
 //userRoutes.post("/:id",userController.updateUser) IMPLEMENTAAAAAAR

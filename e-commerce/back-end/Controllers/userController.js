@@ -1,9 +1,9 @@
-import User from "../Models/User";
+import User from "../Models/User.js";
 
 class UserController{
     constructor(){};
 
-    getAllUsers = async (res,req)=>{
+    getAllUsers = async (req,res)=>{
         try {
             const result = await User.findAll({
                 attributes: ['id','login','lastName','email','password']
@@ -25,7 +25,7 @@ class UserController{
         }
     }
     
-    getUserById = async (res,req) =>{
+    getUserById = async (req,res) =>{
         try {
             const {id} = req.params
             const result = await User.findByPk(id)
@@ -49,7 +49,7 @@ class UserController{
     createUser = async (req,res)=>{
         try{
             const {login, name, lastName, email, contraseña} = req.body;
-            const result = await User.create({login,name,lastName,email,contraseña})
+            const result = await User.create({login,name,lastName,email,password:contraseña})
 
             if (!result) throw new Error("No se pudo crear el usuario")
 
@@ -61,7 +61,7 @@ class UserController{
         }catch(err){
             res.status(400).send({
                 success: false,
-                message: error.message
+                message: "problemasss"
             })
         }
     }
