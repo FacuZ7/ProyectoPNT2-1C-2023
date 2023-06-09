@@ -6,7 +6,7 @@ import LogInButton from '../components/buttons/LogInButton.vue'
 <template>
     <div class="content">
         <div class="contentItem">
-            <label>Usuario:</label>
+            <label>LogIn:</label>
             <input type="text">
         </div>
         <div class="contentItem">

@@ -1,4 +1,4 @@
-import Product from '../Models/Product.js'
+import {Product,Category} from '../Models/index.js'
 
 class ProductController{
     constructor(){}
@@ -6,10 +6,16 @@ class ProductController{
     getAllProducts = async (req,res)=>{
         try{
             const respuesta = await Product.findAll({
-                attributes: ['id','name','description']
+                attributes: ['id','Name','Description','UnitPrice','Image','CategoryId'],
+                include: [
+                    {
+                    model:Category,
+                    attributes: ['Description']
+                    }
+                ]
             });
 
-            if (result.length === 0) throw new Error("No hay ningun producto cargado")
+            if (respuesta.length === 0) throw new Error("No hay ningun producto cargado")
 
             res.status(200).send({
                 success: true,
@@ -29,7 +35,7 @@ class ProductController{
             const {id} = req.params; //agarra el ID de la url !!!
 
             const result = await Product.findAll({
-                attributes: ['id','name','description'],
+                attributes: ['id','Name','Description'],
                 where:{
                     id: id
                 }
@@ -52,8 +58,8 @@ class ProductController{
 
     createProduct = async (req,res) => {
         try{
-            const {name, description, category} = req.body;
-            const result = await Product.create({name,description,category})
+            const {Name, Description, UnitPrice, CategoryId, Image} = req.body;
+            const result = await Product.create({Name,Description,UnitPrice,CategoryId,Image})
 
             if (!result) throw new Error("No se pudo crear el producto")
 
@@ -65,7 +71,7 @@ class ProductController{
         }catch(err){
             res.status(400).send({
                 success: false,
-                message: error.message
+                message: err.message
             })
         }
     }   
@@ -73,9 +79,9 @@ class ProductController{
     updateProduct = async (req,res) =>{
         try {
             const {id} = req.params  //agarra el ID de la url !!!
-            const {name,description,category} = req.body;
+            const {Name, Description, UnitPrice, CategoryId, Image} = req.body;
             const result = await Product.update(
-                {name,description,category},
+                {Name, Description, UnitPrice, CategoryId, Image},
                 { 
                     where: {
                         id: id

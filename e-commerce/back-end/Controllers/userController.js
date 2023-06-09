@@ -1,5 +1,4 @@
 import User from "../Models/User.js";
-
 class UserController{
     constructor(){};
 
@@ -48,8 +47,8 @@ class UserController{
 
     createUser = async (req,res)=>{
         try{
-            const {login, name, lastName, email, contraseña} = req.body;
-            const result = await User.create({login,name,lastName,email,password:contraseña})
+            const {Login, Name, LastName, Email, Password} = req.body;
+            const result = await User.create({Login,Name,LastName,Email,Password})
 
             if (!result) throw new Error("No se pudo crear el usuario")
 
@@ -61,7 +60,7 @@ class UserController{
         }catch(err){
             res.status(400).send({
                 success: false,
-                message: "problemasss"
+                message: err.message
             })
         }
     }

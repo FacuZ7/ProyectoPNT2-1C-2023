@@ -8,27 +8,52 @@
             }
         },
         props:['id']
-
     })
 </script>
 
 <template>
-    <div class="card" @click="redirect">
-        <slot name="image"></slot>
-        <slot name="title"></slot>
-        <slot name="description"></slot>
-        <slot name="price"></slot>
+    <div class="card" @click="redirect()">
+        <div class="prodImg"><slot name="image"></slot></div>
+        <h3 class="prodTitle"><slot name="title"></slot></h3>
+        <p class="prodDesc"><slot name="description"></slot></p>
+        <p class="prodPrice"><slot name="price"></slot></p>
     </div>
 </template>
 
 <style>
     .card{
-        border-radius: 10px; background-color: gray; padding: 20px;
-        max-width: 240px;
+        width: 240px;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: gray;
         transition: transform 0.3s;
     }
 
     .card:hover{
         transform: scale(1.11);
+    }
+
+    .prodImg{
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 10px;
+    }
+
+    .prodTitle{
+        font-size: 18px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .prodDesc {
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .prodPrice {
+        font-size: 16px;
+        margin-top: 5px;
+        color: hsla(160, 100%, 37%, 1);;
+        font-weight: bold;
     }
 </style>

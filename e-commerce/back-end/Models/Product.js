@@ -4,26 +4,27 @@ import connection from '../connection/connection.js'
 class Product extends Model{}
 
 Product.init({
-    name:{
+    Name:{
         type:DT.STRING,
         allowNull: false
     },
-    description:{
+    Description:{
         type:DT.STRING,
         allowNull: true
     },
-    unitPrice:{
+    UnitPrice:{
         type:DT.DOUBLE,
         allowNull:false
     },
-    category:{
+    Image:{
         type:DT.STRING,
-        allowNull: true
+        allowNull:true
     }
 
 },{
     sequelize: connection,
-    modelName:"Product"
+    modelName:"Product",
+    timestamps: false
 })
 
 export default Product
