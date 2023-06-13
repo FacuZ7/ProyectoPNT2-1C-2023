@@ -23,10 +23,10 @@
         <div class="mainPage">
             <div class="productCards" v-for="producto in productos">
                 <ProductCard :id = producto.id>  
-                    <template #image><img :src="producto.image" width="200"/></template>
-                    <template #title>{{producto.name}}</template>
-                    <template #description>{{producto.description}}</template>
-                    <template #price>{{producto.unitPrice}}</template>
+                    <template #image><img :src="producto.Image" width="200"/></template>
+                    <template #title>{{producto.Name}}</template>
+                    <template #description>{{producto.Description}}</template>
+                    <template #price>{{producto.UnitPrice}}</template>
                 </ProductCard>
             </div>        
         </div>
