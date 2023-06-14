@@ -35,7 +35,7 @@ class ProductController{
             const {id} = req.params; //agarra el ID de la url !!!
 
             const result = await Product.findAll({
-                attributes: ['id','Name','Description'],
+                attributes: ['id','Name','Description','UnitPrice','Image','CategoryId'],
                 where:{
                     id: id
                 }
@@ -50,7 +50,7 @@ class ProductController{
             })
         } catch (error) {
             res.status(400).send({
-                success:true,
+                success:false,
                 message: 'Producto NO encontrado'
             })
         }
@@ -58,8 +58,9 @@ class ProductController{
 
     createProduct = async (req,res) => {
         try{
-            const {Name, Description, UnitPrice, CategoryId, Image} = req.body;
-            const result = await Product.create({Name,Description,UnitPrice,CategoryId,Image})
+            const {Name, Description, UnitPrice,Image, CategoryId } = req.body;
+           
+            const result = await Product.create({Name,Description,UnitPrice,Image,CategoryId})
 
             if (!result) throw new Error("No se pudo crear el producto")
 
@@ -69,6 +70,7 @@ class ProductController{
             });
 
         }catch(err){
+            console.log(err)
             res.status(400).send({
                 success: false,
                 message: err.message
@@ -104,7 +106,7 @@ class ProductController{
         }
     }
 
-    deleteProductById = async(res,req)=>{
+    deleteProductById = async(req,res)=>{
         try {
             const {id} = req.params
             const result = await Product.destroy({
