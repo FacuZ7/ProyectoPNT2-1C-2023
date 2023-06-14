@@ -6,7 +6,8 @@ const productController = new ProductController();
 
 productRoutes.get("/", productController.getAllProducts)
 productRoutes.get("/:id", productController.getProductById)
-productRoutes.post("/",productController.createProduct)
+productRoutes.post("/create",productController.createProduct)
 productRoutes.put("/:id",productController.updateProduct)
+productRoutes.delete("/delete/:id",productController.deleteProductById)
 
 export default productRoutes

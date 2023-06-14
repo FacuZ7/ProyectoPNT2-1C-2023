@@ -11,9 +11,10 @@ const app = express();
 
 //---------------- middleware --------------------//
 app.use(express.urlencoded({ extended : true}))
-app.use(cors({
-    origin:`http://localhost:${serverPortFront}`
-}))
+app.use(cors())
+// app.use(cors({
+//     origin:`http://localhost:${serverPortFront}`
+// }))
 app.use(express.json())
 app.use(routerMaster)
 

@@ -10,7 +10,6 @@
         name: "registerButton",
         methods: {
             async registrarme(){
-                //alert(JSON.stringify(this.User));
                 const rta = await axios.post("http://localhost:8081/user/create",this.User)
                 console.log(rta.data)
                 alert("Usuario Creado!")

@@ -15,7 +15,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/CargaProducto',
+      path: '/CargaProducto', 
       name: 'CargaProducto',
       component: ProductUploadView
     },
@@ -35,7 +35,7 @@ const router = createRouter({
       component: RegisterView
     },
     {
-      path: '/Product/:id',
+      path: '/Product/:id', //falta hacer
       name: 'Product',
       component: ProductView
     }
