@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LogInView from '../views/LogInView.vue'
+import LogOutView from '../views/LogOutView.vue'
 import ProductUploadView from '../views/ProductUploadView.vue'
 import RegisterView from "../views/RegisterView.vue"
 import ProductView from "../views/ProductView.vue"
@@ -22,6 +23,11 @@ const router = createRouter({
       path: '/LogIn',
       name: 'LogIn',
       component: LogInView
+    },
+    {
+      path: '/LogOut',
+      name: 'LogOut',
+      component: LogOutView
     },
     {
       path: '/Register',

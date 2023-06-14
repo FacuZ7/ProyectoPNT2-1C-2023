@@ -4,12 +4,18 @@
 
 <script>
     import { defineComponent } from 'vue';
+    
     import axios from 'axios'
     export default defineComponent({
         name: "LogIn",
+        
         methods: {
             async logear(){
-                alert("implementar");
+                if(this.usuario.name=="TestUser"&&this.usuario.password=="TestPassword"){
+                    alert("Bienvenido!")
+                }else{
+                    alert("Usuario incorrecto!")
+                }
                 // const rta = await axios.post("http://localhost:8081/user/create",this.User)
                 // console.log(rta.data)
             }

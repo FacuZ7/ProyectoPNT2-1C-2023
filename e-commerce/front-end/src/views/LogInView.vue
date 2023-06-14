@@ -1,20 +1,48 @@
-<script setup>
+<script>
 import { RouterLink } from 'vue-router'
 import LogInButton from '../components/buttons/LogInButton.vue'
+import { useLoginStore } from '../stores/login'
+import { storeToRefs } from 'pinia'
+export default{
+    components:{LogInButton},
+    setup(){
+        const store = useLoginStore();
+        const {login} =store;
+        return {login};
+    },
+    data(){
+        return{
+            User:{name:"",password:""}
+        }
+    },
+    methods:{
+        loguear(){
+                if(this.User.name=="TestUser"&& this.User.password=="TestPassword"){
+                    alert("Bienvenido!")
+                    this.login()
+                    this.$router.push("/")
+                }else{
+                    alert("Usuario incorrecto!")
+                }
+                // const rta = await axios.post("http://localhost:8081/user/create",this.User)
+                // console.log(rta.data)
+        }
+    }
+}
 </script>
 
 <template>
     <div class="content">
         <div class="contentItem">
             <label>LogIn:</label>
-            <input type="text">
+            <input type="text" v-model="this.User.name">
         </div>
         <div class="contentItem">
             <label>Contraseña:</label>
-            <input type="password">
+            <input type="password" v-model="this.User.password">
         </div>
         <div class="contentItem">
-            <LogInButton/>
+            <button class="logIn-btn" v-on:click="loguear">Iniciar Sesión</button>
         </div>
         <div class="contentItem">
             <p>Si no tenes usuario <RouterLink to="/Register">hace click acá</RouterLink></p>
@@ -40,5 +68,17 @@ import LogInButton from '../components/buttons/LogInButton.vue'
 
     p{
         font-size: 18px;
+    }
+    .logIn-btn{
+        padding: 5px;
+        margin: 5px;
+        background-color: transparent;
+        color: gray;
+        font-size: 20px;
+    }
+
+    .logIn-btn:hover{
+        background-color: hsla(160, 100%, 37%, 1);
+        color: white;
     }
 </style>

@@ -1,5 +1,14 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
+import { storeToRefs } from 'pinia';
+import { useLoginStore } from './stores/login.js';
+export default{
+  setup(){
+        const store = useLoginStore();
+        const {isLogin} =storeToRefs(store);
+        return {isLogin};
+    }
+}
 </script>
 
 <template>
@@ -11,8 +20,9 @@ import { RouterLink, RouterView } from 'vue-router'
         </div>
 
         <div class="itemsDer">
-          <div class="navItem"><RouterLink to="/Register">Registrarme</RouterLink></div>
-          <div class="navItem"><RouterLink to="/LogIn">Iniciar Sesión</RouterLink></div>
+          <div class="navItem"><RouterLink v-if="!isLogin" to="/Register">Registrarme</RouterLink></div>
+          <div class="navItem"><RouterLink v-if="!isLogin" to="/LogIn">Iniciar Sesión</RouterLink></div>
+          <div class="navItem"><RouterLink v-if="isLogin" to="/LogOut">Cerrar Sesión</RouterLink></div>
         </div>
       </nav>
       
