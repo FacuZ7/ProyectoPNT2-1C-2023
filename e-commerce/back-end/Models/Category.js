@@ -11,7 +11,8 @@ Category.init({
 },
 {
     sequelize: connection,
-    modelName:"Category"
+    modelName:"Category",
+    timestamps: false
 })
 
 export default Category

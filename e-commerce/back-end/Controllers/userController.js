@@ -5,7 +5,7 @@ class UserController{
     getAllUsers = async (req,res)=>{
         try {
             const result = await User.findAll({
-                attributes: ['id','login','lastName','email','password']
+                attributes: ['id','Login','LastName','Email','Password']
             })
 
             if (result.length === 0) throw new Error("No existen usuarios")

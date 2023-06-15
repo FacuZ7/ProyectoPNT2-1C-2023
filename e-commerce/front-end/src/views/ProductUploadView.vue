@@ -1,18 +1,14 @@
 <script>
     import ProductUploadButton from '../components/buttons/ProductUploadButton.vue';
     import { defineComponent } from 'vue';
+    import CategoryCombo from '../components/combobox/CategoryCombo.vue';
     export default defineComponent({
-        components: {ProductUploadButton},
+        components: { ProductUploadButton, CategoryCombo},
         data(){
             return {
-                Product: {Name: '',Description: '', UnitPrice: '',Image:'', CategoryId:''}
+                Product: {Name: '',Description: '', UnitPrice: '',Image:'', CategoryId:''},
             }
         },
-        methods: {
-            async guardarImagen(){
-              
-            }
-        }
     })
 </script>
 
@@ -33,7 +29,7 @@
         </div>
         <div class="contentItem">
             <label>Categoria:</label>
-            <input type="text" v-model="Product.CategoryId">
+            <CategoryCombo v-model="Product.CategoryId"/>
         </div>
         <div class="contentItem">
             <label>Imagen:</label>

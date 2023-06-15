@@ -3,7 +3,8 @@ import { RouterLink } from 'vue-router'
 import LogInButton from '../components/buttons/LogInButton.vue'
 import { useLoginStore } from '../stores/login'
 import { storeToRefs } from 'pinia'
-export default{
+import { defineComponent } from 'vue';
+export default defineComponent({
     components:{LogInButton},
     setup(){
         const store = useLoginStore();
@@ -15,20 +16,20 @@ export default{
             User:{name:"",password:""}
         }
     },
-    methods:{
-        loguear(){
-                if(this.User.name=="TestUser"&& this.User.password=="TestPassword"){
-                    alert("Bienvenido!")
-                    this.login()
-                    this.$router.push("/")
-                }else{
-                    alert("Usuario incorrecto!")
-                }
-                // const rta = await axios.post("http://localhost:8081/user/create",this.User)
-                // console.log(rta.data)
-        }
-    }
-}
+    // methods:{
+    //     loguear(){
+    //             if(this.User.name=="TestUser"&& this.User.password=="TestPassword"){
+    //                 alert("Bienvenido!")
+    //                 this.login()
+    //                 this.$router.push("/")
+    //             }else{
+    //                 alert("Usuario incorrecto!")
+    //             }
+    //             // const rta = await axios.post("http://localhost:8081/user/create",this.User)
+    //             // console.log(rta.data)
+    //     }
+    // }
+})
 </script>
 
 <template>
@@ -41,9 +42,12 @@ export default{
             <label>Contraseña:</label>
             <input type="password" v-model="this.User.password">
         </div>
-        <div class="contentItem">
-            <button class="logIn-btn" v-on:click="loguear">Iniciar Sesión</button>
+        <div>
+            <LogInButton :User="User"/>
         </div>
+        <!-- <div class="contentItem">
+            <button class="logIn-btn" v-on:click="loguear">Iniciar Sesión</button>
+        </div> -->
         <div class="contentItem">
             <p>Si no tenes usuario <RouterLink to="/Register">hace click acá</RouterLink></p>
         </div>

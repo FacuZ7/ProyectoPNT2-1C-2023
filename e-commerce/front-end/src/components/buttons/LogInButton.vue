@@ -1,21 +1,27 @@
 <template>
-    <button class="logIn-btn" @click="logear">Iniciar Sesión</button>
+    <button class="logIn-btn" @click="logear()">Iniciar Sesión</button>
 </template>
 
 <script>
     import { defineComponent } from 'vue';
-    
     import axios from 'axios'
+    import { useLoginStore } from '../../stores/login.js'
     export default defineComponent({
         name: "LogIn",
-        
+        setup(){
+            const store = useLoginStore();
+            const {login} =store;
+            return {login};
+        },
         methods: {
             async logear(){
-                if(this.usuario.name=="TestUser"&&this.usuario.password=="TestPassword"){
-                    alert("Bienvenido!")
-                }else{
-                    alert("Usuario incorrecto!")
-                }
+                if(this.User.name=="TestUser"&& this.User.password=="TestPassword"){
+                        alert("Bienvenido!")
+                        this.login()
+                        this.$router.push("/")
+                    }else{
+                        alert("Usuario incorrecto!")
+                    }
                 // const rta = await axios.post("http://localhost:8081/user/create",this.User)
                 // console.log(rta.data)
             }

@@ -9,14 +9,20 @@
             return {
                 producto: {}
             };
+            
         },
         async mounted(){
-            const id = this.$route.params.id;
-            const response = await axios.get(`http://localhost:8081/product/${id}`)
-            this.productos = response.data.result
-            this.productos.Image = "./../../public/" + this.productos.Image
-
-            console.log(response.data.result)
+            try {
+                const id = this.$route.params.id;
+                const response = await axios.get(`http://localhost:8081/product/${id}`)
+                this.producto = response.data.result
+                this.producto.Image = "./../../public/" + this.producto.Image
+                console.log(response.data.result)
+                
+            } catch (error) {
+                console.log(error)
+            }
+            
         }
     })
 </script>
@@ -28,16 +34,16 @@
         </div>
         <div class="contenidoItem">
             <label>Nombre:</label>
-            <input type="text">
+            <input type="text">{{ producto.Name }}
         
             <label>Descripcion:</label>
-            <input type="text">
+            <input type="text"> {{ producto.Name }}
         
             <label>Precio:</label>
-            <input type="text">
+            <input type="text"> {{ producto.Name }}
         
             <label>Categoria:</label>
-            <input type="text">
+            <input type="text"> {{ producto.Category.Description }}
             
             <DeleteButton></DeleteButton>
             

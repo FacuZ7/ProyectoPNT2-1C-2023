@@ -36,6 +36,12 @@ class ProductController{
 
             const result = await Product.findAll({
                 attributes: ['id','Name','Description','UnitPrice','Image','CategoryId'],
+                include: [
+                    {
+                    model:Category,
+                    attributes: ['Description']
+                    }
+                ],
                 where:{
                     id: id
                 }
@@ -64,7 +70,7 @@ class ProductController{
 
             if (!result) throw new Error("No se pudo crear el producto")
 
-            res.status(200).send({
+            res.send({
                 success: true,
                 message: 'Se creó el producto'
             });
@@ -115,13 +121,13 @@ class ProductController{
                 }
             });
 
-            res.status(200).send({
+            res.send({
                 success: true,
                 message: 'Se borro el producto'
             })
 
         } catch (error) {
-            res.status(400).send({
+            res.send({
                 success: false,
                 message: 'NO Se borro el producto'
             })
