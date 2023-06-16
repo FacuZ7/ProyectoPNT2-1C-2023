@@ -27,6 +27,7 @@
         padding: 20px;
         background-color: gray;
         transition: transform 0.3s;
+        margin-right: 25px;
     }
 
     .card:hover{

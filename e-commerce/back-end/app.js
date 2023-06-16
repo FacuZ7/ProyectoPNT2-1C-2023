@@ -3,6 +3,7 @@ import routerMaster from './routes/index.js'
 import connection from './connection/connection.js'
 import cors from 'cors'
 import categorySeed from './seed/categorySeed.js'
+import cookieParser from 'cookie-parser'
 //import Product from './Models/Product.js'
 import {serverPort, serverPortFront} from './config/config.js'
 import productSeed from './seed/productSeed.js'
@@ -11,6 +12,7 @@ const app = express();
 
 //---------------- middleware --------------------//
 app.use(express.urlencoded({ extended : true}))
+app.use(cookieParser())
 app.use(cors())
 app.use(express.json())
 app.use(routerMaster)

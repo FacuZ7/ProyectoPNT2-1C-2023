@@ -43,7 +43,7 @@
             <input type="text"> {{ producto.Name }}
         
             <label>Categoria:</label>
-            <input type="text"> {{ producto.Category.Description }}
+            <input type="text"> {{ producto.CategoryId }}
             
             <DeleteButton></DeleteButton>
             

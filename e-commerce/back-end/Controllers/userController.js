@@ -1,5 +1,5 @@
 import User from "../Models/User.js";
-import { generarToken } from "../utils/token.js";
+import { generateToken, verifyToken } from "../utils/token.js";
 class UserController{
     constructor(){};
 
@@ -90,7 +90,8 @@ class UserController{
                 login:resp.Login
             }
 
-            generarToken(payload)
+            const token = generateToken(payload)
+            res.cookie('token',token)
 
             res.status(200).send({
                 success:true,
@@ -105,7 +106,25 @@ class UserController{
                 
             })
         }
-    } 
+    }
+    
+    me = (req,res,next)=>{
+        const {user}=req
+
+        res.status(200).send({
+            success: true,
+            message: "Usuario ok?¿",
+            result: user
+        })
+    }
+
+    logoutUser = (req,res,next) =>{
+        res.cookie('token','NoCookie') //con esto ya estoy cambiandole la cookie y no va a coincidir
+        res.status(200).send({
+            success:true,
+            message:'Usuario deslogeado'
+        })
+    }
 }
 
 export default UserController

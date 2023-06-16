@@ -62,7 +62,7 @@ export default{
   }
 
   .AppContent{
-    border: 2px solid white;
+    display:flex;
     padding: 10px;
   }
 </style>
