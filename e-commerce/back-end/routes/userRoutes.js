@@ -5,8 +5,10 @@ const userRoutes = Router();
 const userController = new UserController
 
 userRoutes.get("/",userController.getAllUsers)
-userRoutes.post("/create",userController.createUser)
 userRoutes.get("/:id",userController.getUserById)
+
+userRoutes.post("/create",userController.createUser)
+userRoutes.post('/login',userController.loginUser)
 
 userRoutes.put("/:id",(req,res)=>{
     res.send("put con ID!!")

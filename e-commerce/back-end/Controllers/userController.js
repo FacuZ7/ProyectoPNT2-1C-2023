@@ -1,4 +1,5 @@
 import User from "../Models/User.js";
+import { generarToken } from "../utils/token.js";
 class UserController{
     constructor(){};
 
@@ -64,6 +65,47 @@ class UserController{
             })
         }
     }
+
+    loginUser = async (req,res,next)=>{
+        try {
+            const {Login,Password} = req.body;
+            const resp = await User.findOne({
+                where:{
+                    Login  
+                }
+            });
+
+            if (!resp){
+                throw new Error("no se encontro usuario con este login")
+            }
+            
+            const comparePassword = await resp.validatePassword(Password)
+
+            if (!comparePassword){
+                throw new Error('Las credenciales estan chukus')
+            }
+
+            const payload = {
+                id:resp.id,
+                login:resp.Login
+            }
+
+            generarToken(payload)
+
+            res.status(200).send({
+                success:true,
+                message: "Usuario encontrado",
+                resp
+            })
+
+        } catch (err) {
+            res.status(400).send({
+                success:false,
+                message: "Usuario NO encontrado",
+                
+            })
+        }
+    } 
 }
 
 export default UserController
