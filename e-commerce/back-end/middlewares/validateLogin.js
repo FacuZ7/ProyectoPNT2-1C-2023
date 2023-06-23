@@ -9,7 +9,8 @@ const validateLogin = (req,res,next) => {
         req.user=payload
         next()
     } catch (err) {
-        next(err)
+        //next(err)
+        res.status(400).send(err.message)
     }
 }
 

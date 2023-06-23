@@ -109,17 +109,22 @@ class UserController{
     }
     
     me = (req,res,next)=>{
-        const {user}=req
+        try {
+            const {user}=req
 
-        res.status(200).send({
-            success: true,
-            message: "Usuario ok?¿",
-            result: user
-        })
+            res.status(200).send({
+                success: true,
+                message: "Usuario ok",
+                result: user
+            }) 
+        } catch (err) {
+            console.log(err)
+        }  
     }
 
     logoutUser = (req,res,next) =>{
-        res.cookie('token','NoCookie') //con esto ya estoy cambiandole la cookie y no va a coincidir
+        //res.cookie('token',null) con esto ya estoy cambiandole la cookie y no va a coincidir
+        res.clearCookie('token');
         res.status(200).send({
             success:true,
             message:'Usuario deslogeado'

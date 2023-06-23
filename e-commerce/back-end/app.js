@@ -7,6 +7,8 @@ import cookieParser from 'cookie-parser'
 //import Product from './Models/Product.js'
 import {serverPort, serverPortFront} from './config/config.js'
 import productSeed from './seed/productSeed.js'
+import roleSeed from './seed/roleSeed.js'
+import adminSeed from './seed/adminSeed.js'
 const app = express();
 
 
@@ -32,6 +34,11 @@ await connection
     })
     .then(()=>{
         categorySeed()
+    }).then(()=>{
         productSeed()
+    }).then(()=>{
+        roleSeed()
+    }).then(()=>{
+        adminSeed()
     })
 
