@@ -123,7 +123,6 @@ class UserController{
     }
 
     logoutUser = (req,res,next) =>{
-        //res.cookie('token',null) con esto ya estoy cambiandole la cookie y no va a coincidir
         res.clearCookie('token');
         res.status(200).send({
             success:true,

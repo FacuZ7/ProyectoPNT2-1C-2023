@@ -22,22 +22,21 @@
 
 <style>
     .card{
-        width: 240px;
+        width: 100%;
+        height: 100%;
         border-radius: 10px;
         padding: 20px;
         background-color: gray;
         transition: transform 0.3s;
-        margin-right: 25px;
+    }
+
+    .card>div{
+        width: 200px;
+        height: 200px;
     }
 
     .card:hover{
         transform: scale(1.11);
-    }
-
-    .prodImg{
-        max-width: 200px;
-        max-height: 200px;
-        border-radius: 10px;
     }
 
     .prodTitle{
@@ -52,9 +51,9 @@
     }
 
     .prodPrice {
-        font-size: 16px;
+        font-size: 25px;
         margin-top: 5px;
-        color: hsla(160, 100%, 37%, 1);;
+        color: hsla(160, 100%, 37%, 1);
         font-weight: bold;
     }
 </style>

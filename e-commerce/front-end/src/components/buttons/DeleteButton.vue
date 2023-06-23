@@ -13,11 +13,10 @@
                 try {
                     const id = this.$route.params.id; 
                     const rta = await axios.delete(`http://localhost:8081/product/delete/${id}`)
-                    console.log(rta.data)
                     alert("Producto Borrado!")
                     this.$router.push("/")   
                 } catch (error) {
-                    console.log(error)
+                    throw new Error(error.message)
                 }
                 
             }

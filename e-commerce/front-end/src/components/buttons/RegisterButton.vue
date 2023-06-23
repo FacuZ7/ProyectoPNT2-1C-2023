@@ -13,7 +13,7 @@
                 const rta = await axios.post("http://localhost:8081/user/create",this.User)
                 console.log(rta.data)
                 alert("Usuario Creado!")
-                this.$router.push("/")
+                this.$router.push("/LogIn")
             }
         },
         props:['User']    

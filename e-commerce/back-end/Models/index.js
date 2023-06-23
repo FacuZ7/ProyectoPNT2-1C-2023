@@ -8,6 +8,5 @@ Product.belongsTo(Category);
 
 Role.hasMany(User); 
 User.belongsTo(Role); 
-// (la foreign key va en el usuario y apunta hacia role ID)
 
 export {Category,Product,User,Role}

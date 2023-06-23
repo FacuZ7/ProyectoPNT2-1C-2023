@@ -23,10 +23,10 @@
         <div class="mainPage">
             <div class="productCards" v-for="producto in productos">
                 <ProductCard :id = producto.id>  
-                    <template #image><img :src="producto.Image" width="200"/></template>
+                    <template #image><img :src="producto.Image"/></template>
                     <template #title>{{producto.Name}}</template>
                     <template #description>{{producto.Description}}</template>
-                    <template #price>{{producto.UnitPrice}}</template>
+                    <template #price>{{'$' + producto.UnitPrice}}</template>
                 </ProductCard>
             </div>        
         </div>
@@ -37,5 +37,11 @@
     .mainPage{
         display: flex;
         justify-content: space-around;
+    }
+
+    img{
+        object-fit:cover;
+        width: 100%;
+        height: 100%;
     }
 </style>
