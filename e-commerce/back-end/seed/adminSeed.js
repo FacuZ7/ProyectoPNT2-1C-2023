@@ -11,7 +11,7 @@ const adminSeed = async() => {
             RoleId: 1  //admin
         }])
     } catch (err) {
-        console.log('aaaaaaaaa' + err)
+        throw new Error(err.message)
     }
 }
 

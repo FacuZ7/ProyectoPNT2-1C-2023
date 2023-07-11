@@ -17,17 +17,25 @@
         <h3 class="prodTitle"><slot name="title"></slot></h3>
         <p class="prodDesc"><slot name="description"></slot></p>
         <p class="prodPrice"><slot name="price"></slot></p>
+
+        <!-- <div class="buttons">
+            <button class="comprar"></button>
+            <button class="carrito"></button>
+        </div> -->
     </div>
 </template>
 
 <style>
     .card{
-        width: 100%;
-        height: 100%;
         border-radius: 10px;
-        padding: 20px;
         background-color: gray;
         transition: transform 0.3s;
+        margin: 5px;
+        
+    }
+
+    .buttons{
+        border: 1px solid red;
     }
 
     .card>div{

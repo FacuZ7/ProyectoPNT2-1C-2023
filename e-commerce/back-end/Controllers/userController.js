@@ -118,7 +118,7 @@ class UserController{
                 result: user
             }) 
         } catch (err) {
-            console.log(err)
+            throw new Error(err.message)
         }  
     }
 

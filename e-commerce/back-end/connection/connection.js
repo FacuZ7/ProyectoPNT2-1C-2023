@@ -12,7 +12,7 @@ try{
     await connection.authenticate()
     console.log("todo bien")
 }catch(err){
-    console.log(err);
+    throw new Error(err.message)
 }
 
 export default connection

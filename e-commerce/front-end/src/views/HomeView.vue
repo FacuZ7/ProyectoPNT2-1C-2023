@@ -36,7 +36,9 @@
 <style>
     .mainPage{
         display: flex;
-        justify-content: space-around;
+        justify-content: start;
+        width: 100%;
+        flex-wrap: wrap;
     }
 
     img{

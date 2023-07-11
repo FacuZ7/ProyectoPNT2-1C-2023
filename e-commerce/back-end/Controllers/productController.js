@@ -76,7 +76,7 @@ class ProductController{
             });
 
         }catch(err){
-            console.log(err)
+            throw new Error(err.message)
             res.status(400).send({
                 success: false,
                 message: err.message

@@ -9,7 +9,7 @@ const roleSeed = async() => {
             Description:"User"
         }])
     } catch (err) {
-        console.log(err)
+        throw new Error(err.message)
     }
 }
 

@@ -60,11 +60,4 @@ export default{
     margin-bottom: 10px;
     border-color: hsla(160, 100%, 37%, 1);
   }
-
-  .AppContent{
-    display:flex;
-    border: 1px solid red;
-    box-sizing: border-box;
-    flex-wrap: wrap;
-  }
 </style>

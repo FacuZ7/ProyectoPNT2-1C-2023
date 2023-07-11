@@ -15,7 +15,7 @@ const categorySeed = async() => {
             Description:"Medio de transporte"
         }])
     } catch (err) {
-        console.log(err)
+        throw new Error(err.message)
     }
 }
 

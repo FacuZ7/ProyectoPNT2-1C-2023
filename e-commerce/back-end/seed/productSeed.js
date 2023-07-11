@@ -31,7 +31,7 @@ const productSeed = async() => {
             CategoryId:4 
         }])
     } catch (err) {
-        console.log(err)
+        throw new Error(err.message)
     }
 }
 
